@@ -1,0 +1,12 @@
+*DS_Store*
+.buildpath
+.project
+.settings/*
+.vscode/*
+.metadata
+.idea
+node_modules
+.history
+
+# local env files
+.history
