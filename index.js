@@ -9,7 +9,7 @@ const API_KEY = "fAlcIN9XaPaTkiAy0YoYMGOZ";
 const SECRET_KEY = "vHMHsZPAGLAbkWOlvecXzB1DDaDRAiEu";
 
 const client = new AipOcrClient(APP_ID, API_KEY, SECRET_KEY);
-const pdfDir = fs.readdirSync("./source-pdf");
+const pdfDir = fs.readdirSync("./source-pdf").filter(name => name.includes('.pdf'))
 
 const pdfNameJson = {};
 let index = 0;
@@ -87,6 +87,7 @@ const generateXlsx = () => {
 
   const buffer = xlsx.build([{ data: list }]);
   fs.writeFileSync("result.xlsx", buffer);
+  console.log('完成');
 };
 
 recognitionPdf();
